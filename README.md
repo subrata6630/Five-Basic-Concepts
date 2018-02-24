@@ -1,5 +1,12 @@
 # The Five Basic Concepts of any Programming Language 
 
+•	variable
+•	if/else
+•	Array
+•	Loop
+•	Function
+
+
 
 # ভেরিয়েবল (variable):
 
