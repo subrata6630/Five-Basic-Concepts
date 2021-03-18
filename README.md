@@ -133,7 +133,7 @@ writeMsg(); // call the function
 যখন আপনি কোড লিখছেন তখন হয়তো আপনি কোন জটিল এলগরিদম লিখছেন যেটা কিছুদিন পর আপনি নিজে দেখলে এলিয়েনদের কোড মনে হতে পারে।
 
 ### Object Oriented Programming কি?
-Computer Programming এ class এবং Object এর ধারণাকে কাজে লাগিয়ে যে Programming করা হয় তাকেই বলা হয় Object Oriented Programming।
+Computer Programming এ class এবং Object এর ধারণাকে কাজে লাগিয়ে যে Programming করা হয় তাকেই বলা হয় Object Oriented Programming। যে প্রকার প্রোগ্রামিং এ অনেক অনেক অবজেক্ট কে নিয়ে বা অবজেক্ট কে ঘিরে প্রোগ্রামিং করা হয় তাকে OOP বা অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং বলে।
 
 ### Object: 
 আমরা আমাদের চার পাশে যা কিছু দেখি তার সবই Object বা বস্তু। এই ধরুন আপনি আপনার নিজেকে এবং আপনার আসে-পাশের দিকে খেয়াল করুন , আপনার গায়ের জামা, আপনার পরনের প্যান্ট, হাতের মোবাইল, পড়ার টেবিল,বসার চেয়ার ,কম্পিউটার এই সবই একেকটি Object বা বস্তু। এমনকি আপনি / আমি নিজেও একটা Object.
@@ -176,23 +176,124 @@ OOP তে $this একটি বিশেষ ভ্যারিয়েবল। 
 
 ?>
 ```
+### Constructor:
+পিএইচপির বিশেষ ধরণের বিল্ট-ইন মেথড। অবজেক্ট তৈরির সময় প্রোপার্টির ভ্যালু এসাইনে সম্মতি দেয়। অবজেক্ট তৈরি হলে এই মেথডটি স্বয়ংক্রিয়ভাবেই সম্পাদিত হয়। দুটি আন্ডারস্কোর(__) দিয়ে construct মেথড শুরু হয়।
+``` php
+<?php
+class Fruit {
+  public $name;
+  public $color;
+
+  function __construct($name) {
+    $this->name = $name;
+  }
+  function get_name() {
+    return $this->name;
+  }
+}
+
+$apple = new Fruit("Apple");
+echo $apple->get_name();
+?>
+``` 
 ### Inheritance:
 Inheritance মানে হল বংশ পরিক্রমা। আপনি আপনার বাবার থেকে এসেছেন। আপনার বাবা আপনার দাদার থেকে এসেছেন। এটাই হল inheritance. যেমনঃ Form1:Form নির্দেশ করে Form নামের ক্লাস থেকে Form1 নামের একটি object হয়ে এসেছে। এখানে “:” inheritance নির্দেশ করে।
 
-### Constructor:
-পিএইচপির বিশেষ ধরণের বিল্ট-ইন মেথড। অবজেক্ট তৈরির সময় প্রোপার্টির ভ্যালু এসাইনে সম্মতি দেয়। অবজেক্ট তৈরি হলে এই মেথডটি স্বয়ংক্রিয়ভাবেই সম্পাদিত হয়। দুটি আন্ডারস্কোর(__) দিয়ে construct মেথড শুরু হয়।
+``` 
+<?php
+class Fruit {
+  public $name;
+  public $color;
+  public function __construct($name, $color) {
+    $this->name = $name;
+    $this->color = $color;
+  }
+  public function intro() {
+    echo "The fruit is {$this->name} and the color is {$this->color}.";
+  }
+}
+
+// Strawberry is inherited from Fruit
+class Strawberry extends Fruit {
+  public function message() {
+    echo "Am I a fruit or a berry? ";
+  }
+}
+$strawberry = new Strawberry("Strawberry", "red");
+$strawberry->message();
+$strawberry->intro();
+?>
+``` 
 
 ### Encapsulation:
+উত্তরাধিকার সূত্রে কোনো কিছু পাওয়াকে ইনহেরিটেন্স বলে। OOP বা অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং এ একটি প্রধান ক্লাস এর কিছু প্রোপার্টি নিয়ে নতুন এক বা একাধিক ক্লাস বানানো কে ইনহেরিটেন্স বলে।
+
 Encapsulation হল অবজেক্ট এবং মেথড কে একটা capsul এর মধ্যে আবদ্ধ রাখা। অর্থাৎ অবজেক্ট এবং ক্লাস কখনো আলাদা থাকতে পারে না। যেমন ধরুনঃ আপনি বাজারে গিয়ে ৫ কেজি চাল কিনলেন। দোকানদার আপনাকে কিভাবে চাল দিবে? অবশ্যই একটা ব্যাগ এ তাই না? ধরুন ব্যাগ টা হল অবজেক্ট আর চাল হল মেথড। এখন আপনি যেখানে যাবেন ব্যাগ এ করেই আপনাকে চাল নিয়ে যেতে হবে। আবার ধরুন আপনি ভাল গান গাইতে পারেন। আপনি যেখানেই যান, আপনি গান গাইতে পারবেন। তাই না? মানে গান আপনার থেকে কোনোভাবে আলাদা করা সম্ভব নয়। সহজ ভাষায় এটাই হল Encapsulation. তাছাড়া আমরা আগেও দেখেছি যে object.method=instance. মানে instance create করার শর্তই হল object এবং method কে capsul এর মধ্যে রাখা এবং এদের একটি ডট দিয়ে encapsulate করে রাখা হয়।
 
 Encapsulation করার আরেকটি গুণ হল ডাটা হাইড করে রাখা যায়। অর্থাৎ ২ টা সেমিকোলনের ভিতরে মেথড create করলে একটা মেথড অন্য মেথড এর variable কে access করতে পারবে না। ফলে এক মেথডের ডাটা অন্য মেথডের কাছে সুরক্ষিত থাকে। Data Hiding Encapsulation এর একটি বড়ো বৈশিষ্ট্য।
 
+``` 
+class child_class_name extends parent_class_name {
+    use trait_name;
+    ...
+    ...
+    child_class functions
+}
+``` 
+
+``` 
+<?php 
+  
+// Class Geeks 
+class Geeks { 
+  public function sayhello() { 
+     echo "Hello"; 
+  } 
+} 
+  
+// Trait forGeeks 
+trait forGeeks { 
+  public function sayfor() { 
+     echo " Geeks"; 
+  } 
+} 
+  
+class Sample extends Geeks { 
+   use forGeeks; 
+   public function geeksforgeeks() { 
+      echo "\nGeeksforGeeks"; 
+  }  
+} 
+  
+$test = new Sample(); 
+$test->sayhello(); 
+$test->sayfor(); 
+$test->geeksforgeeks(); 
+?> 
+```  
+
 ### Polymorphism:
-Poly অর্থ বহু। Morph অর্থ ফর্ম। তার মানে Polymorphism মানে হল ফর্মের বহুরূপতা।
+Poly অর্থ বহু। Morph অর্থ ফর্ম। তার মানে Polymorphism মানে হল ফর্মের বহুরূপতা। Polymorphism মানে বহুরূপিতা। অর্থাৎ একটা অবজেক্ট নানা সময় নানা রকম রূপ ধারণ করতে পারার ব্যাপারটিই হল Polymorphism.
 
 এটা কেমন ফর্ম? এটা অবশ্যই windows form না। এটা হল আপনার অবস্থা বা state।
 
 আপনি ভাল গান গাইতে পারেন। আপনার বাবার থেকে inherit হয়ে এই বৈশিষ্ট্য আপনার মাঝে এসেছে। কিন্তু আপনি আপনার বাবার থেকে ভাল গান করতে পারেন। এটাই হল polymorphism. আবার আপনার বাবার অনেক রাগ। কিন্তু আপনি সহজে রাগেন না। এটাও polymorphism. polymorphism positive এবং negative ২ ই হতে পারে। আপনি একটা windows form নিয়ে নানাভাবে ডিজাইন করতে পারেন। এটা হল আপনার windows এর বহুরূপতা।
 
+```php
+class Circle implements Shape {
+  private $radius;
+   
+  public function __construct($radius)
+  {
+    $this -> radius = $radius;
+  }
+  
+  // calcArea calculates the area of circles 
+  public function calcArea()
+  {
+    return $this -> radius * $this -> radius * pi();
+  }
+}
+```  
 
 
