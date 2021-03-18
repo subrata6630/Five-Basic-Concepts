@@ -60,6 +60,7 @@ if (condition) {
 }
 ```
 
+
 ``` php
 <?php
 $t = date("H");
@@ -84,10 +85,10 @@ Multidimesional Array<br>
 
 উদাহরন: এক ডজন কমলা
 ```php
-<?php
+
 $cars = array("Volvo", "BMW", "Toyota");
 echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
-?>
+
 ```
 
 ### Loop (লুপ):
@@ -118,47 +119,41 @@ while (condition is true) {
 ```
 ### While Loop:
 
-```
-<?php
+```php
+
 $x = 1;
 
 while($x <= 5) {
   echo "The number is: $x <br>";
   $x++;
 }
-?>
-
 ```
 
 ### Do…while Loop:
 
-```
-<?php
+```php
 $x = 1;
 
 do {
   echo "The number is: $x <br>";
   $x++;
 } while ($x <= 5);
-?>
 
 ```
 
 ### For Loop: 
 
-```
-<?php
+```php
 for ($x = 0; $x <= 10; $x++) {
   echo "The number is: $x <br>";
 }
 ?>
-
 ```
 
 ### Foreach loop:
 
-```
-<?php
+```php
+
 $colors = array("red", "green", "blue", "yellow");
 
 foreach ($colors as $value) {
