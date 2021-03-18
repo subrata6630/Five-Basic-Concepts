@@ -47,19 +47,48 @@ $y = 10.5;
 ### if/else (শর্তাধীন/ কন্ডিশন):
 শর্ত সাপেক্ষে কোন কিছু করাকে প্রোগ্রামিং এর ভাষায় কন্ডিশন বা কন্ডিশনাল স্টেটমেন্ট বলে। কোনো শর্তের উপর কোনো action নেয়ার জন্য কন্ডিশনাল স্টেটমেন্ট ব্যাবহৃত হয়। ধরুন আমি আমার ওয়েবসাইটে এমন একটা ফিচার  যোগ করতে চাই যাতে যদি কেউ আমার সাইটে দুপুর ১২ টার আগে ঢুকে তাহলে দেখাবে “Good Morning” আর যদি কেউ বিকেল ৫ টার পর ঢুকে তাহলে দেখাবে “Good evening” এই ধরনের বরং এর চেয়েও মজাদার ও অ্যাডভান্সড কাজগুলো করতে Conditional statement এর দরকার। যদি কোন কিছু সত্য হয়, তাহলে একটা কিছু কোড রান করার জন্য if স্ট্যাটমেন্ট ব্যবহার করা হয়। 
 
+ ### In PHP we have the following conditional statements:
+
+* if statement - executes some code if one condition is true
+* if...else statement - executes some code if a condition is true and another code if that condition is false
+* if...elseif...else statement - executes different codes for more than two conditions
+* switch statement - selects one of many blocks of code to be executed
+
+``` php
+if (condition) {
+  code to be executed if condition is true;
+}
+```
+
+``` php
+<?php
+$t = date("H");
+
+if ($t < "20") {
+  echo "Have a good day!";
+}
+?>
+```
 
 ### Array/ Collection (সমষ্টি)এ্যারে কি?:  
 এক সাথে কোন কিছুর Collection পাওয়াকে কে Array বলে। এ্যারে নিয়ে কাজ করতে অনেক ধরনের জরুরী ফাংশনালিটি প্রয়োজন তাদের মধ্যে কিছু বেটা ভার্সনে ইম্পলিমেন্ট করা হয়েছে।
 
-এ্যারে হলো পিএইচপি এর একটি ফাংশন। যা একাধিক ভ্যারিয়েবল কে একটি এ্যারে এর মধ্যে সংরক্ষণ করে রাখে । Array ৩ প্রকার : যথাঃ- Index Array,Associative Array, Multidimesional Array
+এ্যারে হলো পিএইচপি এর একটি ফাংশন। যা একাধিক ভ্যারিয়েবল কে একটি এ্যারে এর মধ্যে সংরক্ষণ করে রাখে । 
+Array ৩ প্রকার : যথাঃ- 
+Index Array,<br>
+Associative Array, <br>
+Multidimesional Array<br>
 
 যেমন : আপনি কতগুলো রংয়ের এর নাম একটি ভ্যারিয়েবল এর রাখতে তাহলে আপনাকে পিএইচপি এর এ্যারে ফাংশন ব্যবহার করতে হবে । যদি না করেন তাহেল আপনাকে প্রতিটি রংয়ের জন্য একাধিক ভ্যারিয়েবল লিখতে হবে।
 
-Example : https://notepad.pw/1hlw
-
 
 উদাহরন: এক ডজন কমলা
-
+```php
+<?php
+$cars = array("Volvo", "BMW", "Toyota");
+echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+?>
+```
 
 ### Loop (লুপ):
 
