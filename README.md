@@ -200,7 +200,6 @@ echo $apple->get_name();
 Inheritance মানে হল বংশ পরিক্রমা। আপনি আপনার বাবার থেকে এসেছেন। আপনার বাবা আপনার দাদার থেকে এসেছেন। এটাই হল inheritance. যেমনঃ Form1:Form নির্দেশ করে Form নামের ক্লাস থেকে Form1 নামের একটি object হয়ে এসেছে। এখানে “:” inheritance নির্দেশ করে।
 
 ``` 
-<?php
 class Fruit {
   public $name;
   public $color;
@@ -222,7 +221,7 @@ class Strawberry extends Fruit {
 $strawberry = new Strawberry("Strawberry", "red");
 $strawberry->message();
 $strawberry->intro();
-?>
+
 ``` 
 
 ### Encapsulation:
@@ -242,8 +241,7 @@ class child_class_name extends parent_class_name {
 ``` 
 
 ``` 
-<?php 
-  
+
 // Class Geeks 
 class Geeks { 
   public function sayhello() { 
@@ -269,7 +267,7 @@ $test = new Sample();
 $test->sayhello(); 
 $test->sayfor(); 
 $test->geeksforgeeks(); 
-?> 
+
 ```  
 
 ### Polymorphism:
