@@ -91,11 +91,12 @@ Computer Programming এ class এবং Object এর ধারণাকে ক
 
 ``` php
 class Car {
- 
+ // properties
   public $comp;
   public $color = 'beige';
   public $hasSunRoof = true;
- 
+  
+  // method that says hello
   public function hello() 
   {
     return "beep";
