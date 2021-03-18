@@ -426,5 +426,90 @@ class Circle implements Shape {
   }
 }
 ```  
+### Namespace:
+Namespace কি? এটা বুঝার জন্য আপনাদেরকে একটা গল্প বলব। মামনুন এবং মুহিব দুই ভাই , তাদের একজনের বয়স ৪ বছর অপরজনের বয়স ৩ বছর। তাদেরকে দেখতে একই রকমের খেলনা দিতে হয় । আর দেখতে হুবহু একই রকম না দিলে কোনটা বেশি সুন্দর বা কোনটা কম সুন্দর তা নিয়ে তারা সারাক্ষন ঝগড়া করে। আর তাই তাদের বাবা সবসময় হুবহু একই রকমের ২ টি খেলনা ই কেনেন। এদিকে একই রকম হওয়ায় তাদের বাবা আরেকটা সমস্যায় পড়লেন, একজন আরেকজনের খেলনা নিয়ে কাড়াকাড়ি করে আর জগড়া করে, কারণ কে কার খেলনা ববহার করছে বুঝতে পারে না। এই সমস্যা সমাধানের জন্য তাদের বাবা তাদের প্রত্যেকের খেলনায় একটি করে লেভেল লাগিয়ে দেয় । যেন প্রত্যেকে তার নিজেরটা চিনে নিতে পারে। এখন আর সমস্যা হয় না । বলা যায় Namespace এক ধরনের লেভেল বা স্টিকার। আবার বলা যায়, PHP তে Namespace ধারণা অনেকটা আমাদের কাছে একইনামের দুটি file কে দুটি ভিন্ন ফোল্ডারে রাখার মতো। অর্থাৎ, foo/info.txt এবং bar/info.txt path এর মতো। যদিও বাস্তবে namespace declare করার জন্য আমাদেরকে এইরকম folder তৈরী এর পরিবর্তে একটা ভার্চুয়াল path দিয়ে access করতে হবে।
+
+```php 
+<?php
+namespace namespaceName;
+/*
+Your PHP Code Goes hear
+*/
+```  
+### কিভাবে namespace সহ constant, function এবং class কে কল করবেন?
+
+namespace সহ constant, function এবং class কে call ভালো ভাবে বুঝার জন্য প্রথমে আমরা একই নামের constant, function এবং class দিয়ে দুটি ভিন্ন file তৈরী করব দুটি ভিন্ন namespace দিয়ে।
+
+* File: myproject1.php
+
+```php
+
+<?php
+// define this code in the MyProject1 namespace
+namespace MyProject1;
+const a="America";
+function test(){
+    echo "Hello I'm From MyProject1 Namespace";
+}
+class Test{
+    public $b="Bangladesh";
+    public function sayHello(){
+        echo "Hello Bangladesh! From MyProject1 Namespace<br>";
+    }
+}
+
+* File: myproject2.php
+
+```php
+
+<?php
+// define this code in the MyProject2 namespace
+namespace MyProject2;
+const a="Africa";
+function test(){
+    echo "Hello I'm From MyProject2 Namespace";
+}
+class Test{
+    public $b="Bharma";
+    public function sayHello(){
+        echo "Hello Bharma! From MyProject2 Namespace<br>";
+    }
+}
+```
+
+এখন আমরা myproject1.php এবং myproject2.php file দুটিকে project.php ফাইল এ include করব। এবং namespace সহ call করব।
+
+* File: project.php
+
+```php
+<?php
+include("myproject1.php");
+include("myproject2.php");
+ 
+ 
+echo "<h2>Namespace MyProject1</h2>";
+echo MyProject1\a,"<br>";
+echo MyProject1\test(),"<br>";
+$obj=new MyProject1\Test;
+echo $obj->b,"<br>";
+$obj->sayHello();
+ 
+ 
+echo "<h2>Namespace MyProject2</h2>";
+echo MyProject2\a,"<br>";
+echo MyProject2\test(),"<br>";
+$obj=new MyProject2\Test;
+echo $obj->b,"<br>";
+$obj->sayHello();
+
+```
+
+### Namespace এর ব্যবহারের ভিত্তিতে Namespace name তিন প্রকার :
+
+* Unqualified Namespace
+* Qualified Namespace
+*  Fully Qualified Namespace
+
+
 
 
