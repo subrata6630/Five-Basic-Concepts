@@ -508,8 +508,26 @@ $obj->sayHello();
 
 * Unqualified Namespace
 * Qualified Namespace
-*  Fully Qualified Namespace
+* Fully Qualified Namespace
 
 
+### Trait: 
+সাধারণত PHP কে বলা হয় Single Inheritance Language অর্থাৎ, PHP Language টি Multiple Inheritance সাপোর্ট করেনা। আর Trait হচ্ছে PHP OOP তে Single Inheritance এর সীমাবদ্ধতা দূর করার এবং Multiple Inheritance ব্যবহার করার একটি নতুন concept . যা PHP 5.4 এ প্রথম ব্যবহার করা হয়। Traits অনেকটা class এর মতোই, Trait কে Define করা হয় ক্লাসের মত করেই trait কিওয়ার্ডটি ব্যবহার করে। তবে এর থেকে class এর মত object তৈরী করা যায়না। কিন্তু একাধিক trait এর property এবং Method গুলোকে একটি single class এর মধ্যে ব্যবহার করা যায়। এবার চলুন একটা উদাহরণের মাধ্যমে আরো ভালো ভাবে বুঝা যাক :
+
+
+```php
+<?php
+trait Foo
+ {
+    public function sayHello(){
+         return "Hello";
+    }
+    public function sayWorld(){
+     return "World";
+    }
+ }
+?>
+
+```
 
 
