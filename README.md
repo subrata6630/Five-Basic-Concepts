@@ -168,8 +168,46 @@ function writeMsg() {
 writeMsg(); // call the function
 ?>
 ```
-### কমেন্ট: 
-যখন আপনি কোড লিখছেন তখন হয়তো আপনি কোন জটিল এলগরিদম লিখছেন যেটা কিছুদিন পর আপনি নিজে দেখলে এলিয়েনদের কোড মনে হতে পারে।
+### কমেন্ট/Comments: 
+যখন আপনি কোড লিখছেন তখন হয়তো আপনি কোন জটিল এলগরিদম লিখছেন যেটা কিছুদিন পর আপনি নিজে দেখলে এলিয়েনদের কোড মনে হতে পারে। PHP অথবা যেকোনো Programming Language এ Comments হচ্ছে, একজন কোডার বা প্রোগ্রামারের সোর্স কোডের ব্যাখ্যা বা পাদটীকা। এটাকে আমরা Coding Documentation ও বলতে পারি।
+
+PHP তে Comments মূলত দুই প্রকার :
+
+* Single Line Comments (প্রত্যেক line এর জন্য আলাদা ভাবে comment চিহ্ন ব্যবহার করতে হয় )
+ * Multi Line Comments (একসাথে একাধিক লাইনে এর জন্য শুধু একবার কমেন্ট চিহ্ন ব্যবহার করতে হয়।)
+
+### single-line comments:
+```html
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+// This is a single-line comment
+
+</body>
+</html>
+
+```
+###  Multi Line Comments: 
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+/*
+This is a multiple-lines comment block
+that spans over multiple
+lines
+*/
+?>
+
+</body>
+</html>
+```
 
 ### Object Oriented Programming কি?
 Computer Programming এ class এবং Object এর ধারণাকে কাজে লাগিয়ে যে Programming করা হয় তাকেই বলা হয় Object Oriented Programming। যে প্রকার প্রোগ্রামিং এ অনেক অনেক অবজেক্ট কে নিয়ে বা অবজেক্ট কে ঘিরে প্রোগ্রামিং করা হয় তাকে OOP বা অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং বলে।
