@@ -104,14 +104,67 @@ echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
 লুপ হচ্ছে এমন একটা statement যেটা দিয়ে একটা কোডের ব্লক কে নির্দিষ্ট কয়েকবার execute করা যায় যতক্ষন না আমাদের কাজটা শেষ হয়।
 ৪ ধরনের লুপ আছে-
 
+* While Loop  
+* Do…while Loop
+* For Loop
+* Foreach Loop
+
+
+
+```php
+while (condition is true) {
+  code to be executed;
+}
 ```
-While Loop
+### While Loop:
 
-Do…while Loop
+```
+<?php
+$x = 1;
 
-For Loop
+while($x <= 5) {
+  echo "The number is: $x <br>";
+  $x++;
+}
+?>
 
-Foreach Loop
+```
+
+### Do…while Loop:
+
+```
+<?php
+$x = 1;
+
+do {
+  echo "The number is: $x <br>";
+  $x++;
+} while ($x <= 5);
+?>
+
+```
+
+### For Loop: 
+
+```
+<?php
+for ($x = 0; $x <= 10; $x++) {
+  echo "The number is: $x <br>";
+}
+?>
+
+```
+
+### Foreach loop:
+
+```
+<?php
+$colors = array("red", "green", "blue", "yellow");
+
+foreach ($colors as $value) {
+  echo "$value <br>";
+}
+?>
 
 ```
 
