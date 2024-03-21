@@ -381,6 +381,35 @@ $strawberry->intro();
 ### Getters and setter: 
 Getters এবং setters হল একটি ক্লাসের অ্যাট্রিবিউট (বা বৈশিষ্ট্য) অ্যাক্সেস নিয়ন্ত্রণ করার জন্য পিএইচপি-র মতো অবজেক্ট-ওরিয়েন্টেড প্রোগ্রামিং ভাষায় ব্যবহৃত পদ্ধতি। তারা ব্যক্তিগত বা সুরক্ষিত বৈশিষ্ট্যের মানগুলি পড়ার (পাওয়া) এবং সংশোধন (সেট) করার একটি উপায় প্রদান করে, একটি বস্তুর মধ্যে ডেটা এনক্যাপসুলেট করে এবং এটিতে নিয়ন্ত্রিত অ্যাক্সেস প্রদান করে।
 
+```php
+<?php
+
+class user{
+
+    public $email;
+
+
+    public function setEmail($email) //setter
+    {
+        if(filter_var($email,  FILTER_VALIDATE_EMAIL)){
+            return;
+        }
+        $this->email = $email;
+    }
+
+    public function getEmail() //getter
+    {
+        return strtolower($this->email);
+    }
+
+}
+
+$user = new user;
+$user->setEmail('hello@subrata.me');
+echo $user->getEmail(); // Output: hello@subrata.me
+
+```
+
 
 #### Getters:
 ``` php
