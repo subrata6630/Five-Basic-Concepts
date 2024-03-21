@@ -76,7 +76,7 @@ Multidimesional Array<br>
 
 উদাহরন: এক ডজন কমলা
 ```php
-
+<?php
 $cars = array("Volvo", "BMW", "Toyota");
 echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
 
@@ -104,6 +104,7 @@ echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
 
 
 ```php
+<?php
 while (condition is true) {
   code to be executed;
 }
@@ -111,7 +112,7 @@ while (condition is true) {
 ### While Loop:
 
 ```php
-
+<?php
 $x = 1;
 
 while($x <= 5) {
@@ -123,6 +124,7 @@ while($x <= 5) {
 ### Do…while Loop:
 
 ```php
+<?php
 $x = 1;
 
 do {
@@ -135,6 +137,7 @@ do {
 ### For Loop: 
 
 ```php
+<?php
 for ($x = 0; $x <= 10; $x++) {
   echo "The number is: $x <br>";
 }
@@ -144,7 +147,7 @@ for ($x = 0; $x <= 10; $x++) {
 ### Foreach loop:
 
 ```php
-
+<?php
 $colors = array("red", "green", "blue", "yellow");
 
 foreach ($colors as $value) {
@@ -216,6 +219,7 @@ Computer Programming এ class এবং Object এর ধারণাকে ক
 আমরা আমাদের চার পাশে যা কিছু দেখি তার সবই Object বা বস্তু। এই ধরুন আপনি আপনার নিজেকে এবং আপনার আসে-পাশের দিকে খেয়াল করুন , আপনার গায়ের জামা, আপনার পরনের প্যান্ট, হাতের মোবাইল, পড়ার টেবিল,বসার চেয়ার ,কম্পিউটার এই সবই একেকটি Object বা বস্তু। এমনকি আপনি / আমি নিজেও একটা Object.
 
 ``` php
+<?php
 class Car {
  // properties
   public $comp;
@@ -235,6 +239,7 @@ class Car {
 
 ``` php
 // Declare the class
+<?php
 class Car {
   // The code
 }
