@@ -244,6 +244,19 @@ class Car {
   // The code
 }
 ```
+
+``` php
+<?php
+
+class user
+{
+    public $username = 'Subrata';
+}
+
+$user = new User;
+echo  $user->username;  // Output: Subrata
+```
+
 ### $this keyword: 
 OOP তে $this একটি বিশেষ ভ্যারিয়েবল। এটি একই অবজেক্টকে নির্দেশ করে। $this কীওয়ার্ড ব্যবহার করে আপনি একটি ক্লাসের প্রোপার্টি এবং মেথডসমুহকে ঐ ক্লাসের মধ্য থেকেই অ্যাক্সেস করতে পারবেন।
 ```php
