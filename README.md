@@ -212,6 +212,8 @@ lines
 </html>
 ```
 
+# The  Basic Concepts OOP of any Programming Language 
+
 ### Object Oriented Programming কি?
 Computer Programming এ class এবং Object এর ধারণাকে কাজে লাগিয়ে যে Programming করা হয় তাকেই বলা হয় Object Oriented Programming। যে প্রকার প্রোগ্রামিং এ অনেক অনেক অবজেক্ট কে নিয়ে বা অবজেক্ট কে ঘিরে প্রোগ্রামিং করা হয় তাকে OOP বা অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং বলে।
 
@@ -350,7 +352,8 @@ echo $apple->get_name();
 ### Inheritance:
 Inheritance মানে হল বংশ পরিক্রমা। আপনি আপনার বাবার থেকে এসেছেন। আপনার বাবা আপনার দাদার থেকে এসেছেন। এটাই হল inheritance. যেমনঃ Form1:Form নির্দেশ করে Form নামের ক্লাস থেকে Form1 নামের একটি object হয়ে এসেছে। এখানে “:” inheritance নির্দেশ করে।
 
-``` 
+``` php
+<?php
 class Fruit {
   public $name;
   public $color;
@@ -374,6 +377,35 @@ $strawberry->message();
 $strawberry->intro();
 
 ``` 
+
+### Getters and setter: 
+Getters এবং setters হল একটি ক্লাসের অ্যাট্রিবিউট (বা বৈশিষ্ট্য) অ্যাক্সেস নিয়ন্ত্রণ করার জন্য পিএইচপি-র মতো অবজেক্ট-ওরিয়েন্টেড প্রোগ্রামিং ভাষায় ব্যবহৃত পদ্ধতি। তারা ব্যক্তিগত বা সুরক্ষিত বৈশিষ্ট্যের মানগুলি পড়ার (পাওয়া) এবং সংশোধন (সেট) করার একটি উপায় প্রদান করে, একটি বস্তুর মধ্যে ডেটা এনক্যাপসুলেট করে এবং এটিতে নিয়ন্ত্রিত অ্যাক্সেস প্রদান করে।
+
+
+#### Getters:
+``` php
+<?php
+class MyClass {
+    private $value;
+
+    public function getValue() {
+        return $this->value;
+    }
+}
+```
+
+#### setter:
+```php
+<?php
+class MyClass {
+    private $value;
+
+    public function setValue($newValue) {
+        $this->value = $newValue;
+    }
+}
+
+```
 
 ### Encapsulation:
 উত্তরাধিকার সূত্রে কোনো কিছু পাওয়াকে ইনহেরিটেন্স বলে। OOP বা অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং এ একটি প্রধান ক্লাস এর কিছু প্রোপার্টি নিয়ে নতুন এক বা একাধিক ক্লাস বানানো কে ইনহেরিটেন্স বলে।
