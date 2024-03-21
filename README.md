@@ -349,32 +349,61 @@ $apple = new Fruit("Apple");
 echo $apple->get_name();
 ?>
 ``` 
-### Inheritance:
-Inheritance মানে হল বংশ পরিক্রমা। আপনি আপনার বাবার থেকে এসেছেন। আপনার বাবা আপনার দাদার থেকে এসেছেন। এটাই হল inheritance. যেমনঃ Form1:Form নির্দেশ করে Form নামের ক্লাস থেকে Form1 নামের একটি object হয়ে এসেছে। এখানে “:” inheritance নির্দেশ করে।
+### Inheritance/ বংশ পরিক্রমা:
+Inheritance মানে হল বংশ পরিক্রমা। আপনি আপনার বাবার থেকে এসেছেন। আপনার বাবা আপনার দাদার থেকে এসেছেন। এটাই হল inheritance. যেমনঃ এটি প্রোগ্রামিং প্যারাডাইমের একটি সুত্রাত্মক উদাহরণ যা ওপরের উদাহরণে বর্ণিত হয়েছে। এই উদাহরণে, Dog ক্লাসটি Animal ক্লাস থেকে বংশ পরিক্রমা করে এবং এটি তার পিতা ক্লাসের বৈশিষ্ট্য, মেথড, ইত্যাদি উপলব্ধি করে। বংশ পরিক্রমার মাধ্যমে, কোড পুনরাবৃত্তি কম হয়, একটি ক্লাসের ফিচার পুনরাবৃত্তি করা যায়, এবং কোড ব্যবস্থাপনা সহজ হয়ে থাকে।
 
 ``` php
 <?php
-class Fruit {
-  public $name;
-  public $color;
-  public function __construct($name, $color) {
-    $this->name = $name;
-    $this->color = $color;
-  }
-  public function intro() {
-    echo "The fruit is {$this->name} and the color is {$this->color}.";
-  }
+
+// Parent class
+class Animal {
+    protected $name;
+    protected $color;
+
+    public function __construct($name, $color) {
+        $this->name = $name;
+        $this->color = $color;
+    }
+
+    public function speak() {
+        echo "Animal speaks\n";
+    }
+
+    public function displayDetails() {
+        echo "Name: {$this->name}, Color: {$this->color}\n";
+    }
 }
 
-// Strawberry is inherited from Fruit
-class Strawberry extends Fruit {
-  public function message() {
-    echo "Am I a fruit or a berry? ";
-  }
+// Child class inheriting from Animal
+class Dog extends Animal {
+    private $breed;
+
+    public function __construct($name, $color, $breed) {
+        parent::__construct($name, $color);
+        $this->breed = $breed;
+    }
+
+    public function speak() {
+        echo "Dog barks\n";
+    }
+
+    public function displayDetails() {
+        parent::displayDetails();
+        echo "Breed: {$this->breed}\n";
+    }
 }
-$strawberry = new Strawberry("Strawberry", "red");
-$strawberry->message();
-$strawberry->intro();
+
+// Creating objects
+$animal = new Animal("Unknown", "Unknown");
+$dog = new Dog("Max", "Brown", "Labrador");
+
+// Calling methods
+$animal->speak(); // Output: Animal speaks
+$animal->displayDetails(); // Output: Name: Unknown, Color: Unknown
+
+$dog->speak(); // Output: Dog barks
+$dog->displayDetails(); // Output: Name: Max, Color: Brown, Breed: Labrador
+
 
 ``` 
 
