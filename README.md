@@ -450,10 +450,54 @@ class child_class_name extends parent_class_name {
     ...
     child_class functions
 }
-``` 
+```
+
+
+```
+<?php
+
+class validator
+{
+   protected $errors =[];
+
+
+   public function validator ($data, $rules) 
+    {
+        // 
+         $this ->errors[] = 'The email is required';     
+     }
+
+   public function fails()
+   {
+        return !empty($this->errors);
+
+   }  
+
+   public function geterrors()
+   {
+    return $this->errors;
+   }
+
+
+}
+
+
+$validator =new  validator;
+$validator ->validator(['email'=>'example@gmail.com'],['required']);
+
+
+if($validator ->fails()){
+   die('Fails');    
+}
+else{
+   echo "Success";
+}
+
+```
+
 
 ``` 
-
+<?php
 // Class Geeks 
 class Geeks { 
   public function sayhello() { 
