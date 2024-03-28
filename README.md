@@ -1032,6 +1032,7 @@ php artisan migrate
 
 ```
 php artisan make:migration add_category_id_to_posts --table=posts
+
 ```
 
 category_id যুক্ত হবে posts টেবিলে ।
@@ -1072,6 +1073,7 @@ class AddCategoryIdToPosts extends Migration
 
 ```
 php artisan migrate
+
 ```
 
 ডাটাবেস যাচাই করুন slug পরে category_id কলাম যুক্ত হয়েছে
@@ -1091,12 +1093,14 @@ var vm = new Vue({
     }
   }
 })
+
 ```
 অনেক ভালো, তাই না?
 
 ### কলাম টাইপ
 
 ```
+
 Command	Command	Command
 $table->bigIncrements('id');	$table->bigInteger('votes');	$table->binary('data');
 $table->boolean('confirmed');	$table->char('name', 4);	$table->date('created_at');
@@ -1110,6 +1114,7 @@ $table->boolean('confirmed');	$table->char('name', 4);	$table->date('created_at'
 $users = DB::table('users')->get();
 
 $users = App\User::all(); / $users = User::all();
+
 ```
 ### Retrieving Results
 
@@ -1117,7 +1122,8 @@ Retrieving All Rows From A Table
 
 ডাটাবেসের সকল সারির ডাটার জন্য নিচের কোড অনুসরন করতে হবে । $users = DB::table(‘users’)->get(); $users একটা ভারিয়েবল , DB::table(‘users’) এর users ডাটাবেস টেবিল নাম । DB:: হচ্ছে লারাভেল এর facade । DB:: , UserController এ ব্যবহার করার জন্য use Illuminate\Support\Facades\DB; প্রথমে বলে দিতে হবে । get(); [] মেথড দিয়ে সব ডাটা পাবেন ।
 
-```
+```php
+
  <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
@@ -1139,6 +1145,8 @@ class UserController extends Controller
 ```
 
 মডেল এর মাধ্যমে ডাটা সংগ্রহঃ
+
+
 ```
 <?php
 namespace App\Http\Controllers;
@@ -1200,13 +1208,16 @@ $users = DB::table('users')->where('votes', '=', 100)->get();
 
 ```
 $users = DB::table('users')->where('votes', 100)->get();
+
 ```
 Where Array : দুই বা ততোধিক কলাম Where এ ব্যবহার করতে চাইলে অ্যারে করতে হবে । এসময় Where ,And (&& ) এর মত কাজ করবে
+
 ```
 $users = DB::table('users')->where([
     ['status', '=', '1'],
     ['subscribed', '>', '100'],
 ])->get();
+
 ```
 
 ### orWhere:
