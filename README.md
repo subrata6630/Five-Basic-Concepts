@@ -826,6 +826,7 @@ _head.blade.php
 title টা সব সময় আলাদা আলাদা করবেন , সেজন্য এখানেও @yield() ব্যবহার করবেন ।
 
 _mystyle.blade.php
+
  ```
 <link href="css/demo.css" rel="stylesheet">
 <link rel="stylesheet" href="css/custom.css">
@@ -974,13 +975,15 @@ DB_DATABASE=database/hello_laravel.sqlite
 ```
 php artisan make:migration create_posts_table --create=posts
 
+```
 
 ###এখন
-
+```
 -database
   -migrations
     -2017_02_06_175142_create_posts_table.php
 
+```
 গিয়ে এ এমন একটা ফাইল পাবেন । আপনি ডাটা কি কি রাখবেন সেটা সেট আপ দিবেন।
 
 ```
